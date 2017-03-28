@@ -23,12 +23,13 @@ class Pokemon {
 	constructor(data) {
 		this.name = data.name;
 		this.spriteUrls = data.sprites;
-	}
-
-	convertAndDrawSprites(target) {
+		// convert spriteUrls to be wrapped in an image tag
 		Object.keys(this.spriteUrls).map((key) => {
 		   this.spriteUrls[key] = `<img src="${this.spriteUrls[key]}" />`;
 		});
+	}
+
+	drawSprites(target) {
 		for (let key in this.spriteUrls) {
 			$(target).append(this.spriteUrls[key]);
 		}
@@ -40,7 +41,7 @@ const createPokemonByName = ((name) => {
 	}).then((data) => {
 		let pokemon = new Pokemon(data)
 		$("#results").append(pokemon.name);
-		pokemon.convertAndDrawSprites("#results");
+		pokemon.drawSprites("#results");
 	}).catch((err) => {
 		return console.log(err);
 	});
