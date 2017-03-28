@@ -59,7 +59,9 @@ class Pokemon {
 		this.position = {};
 		this.faceSprite = new Image();
 		this.faceSprite.src = this.spriteUrls.front_default;
-		this.speed = 0;
+		//this.speed = 0;
+		this.speed = data.stats[0].base_stat
+		this.wins = 0;
 	}
 
 	currentPosition() {
@@ -99,36 +101,43 @@ const updateRace = (() => {
 	if (!winner) {
 		context.clearRect(0, 0, $canvas.width(), $canvas.height());
 		race.forEach((p) => {
-			p.updatePosition({x: p.currentPosition().x + 1 + p.speed, y: p.currentPosition().y});
+			p.updatePosition({x: p.currentPosition().x + 1 + (p.speed / 33), y: p.currentPosition().y});
 			context.drawImage(p.faceSprite, p.currentPosition().x, p.currentPosition().y);
 		});
 	} else {
+		winner.wins++;
 		winner.updatePosition({x: 400, y: 400});
 		context.clearRect(0, 0, $canvas.width(), $canvas.height());
 		context.font="32px Georgia";
 		context.fillText(`THE WINNER IS ${winner.name}`, 400, 380);
 		context.drawImage(winner.faceSprite, winner.currentPosition().x, winner.currentPosition().y);
 		clearInterval(raceStatus);
-		let button = document.createElement('input');
-		button.type = "submit";
-		button.id = "start-button";
-		button.value = "Restart";
-		button.onclick = function(event) {
-			event.preventDefault();
-			startRace();
-		}
-		$('#race').append(button)
 	}
 });
 
-const restartLine(() => {
-	
+const restartLine = (() => {
+	$('#race').hide();	
+	$("#start-line").show();
+	$("#search-form").show();
+	race.forEach((p) => {
+		p.updatePosition({x: 0, y: 0})
+	});
 });
 
 const initializeRace = (() => {
 	$("#start-line").hide();
 	$("#search-form").hide();
 	$("#race").show();
+	let button = document.createElement('input');
+		button.type = "submit";
+		button.id = "restart-button";
+		button.value = "Restart";
+		button.onclick = function(event) {
+			event.preventDefault();
+			restartLine();
+		}
+	if (!$('#restart-button').length)
+		$('#race').append(button)
 	let context = $canvas[0].getContext('2d');
 	let yPos = 0;
 	race.forEach((pokemon) => {
@@ -178,6 +187,7 @@ $(document).ready(function () {
 	$( "#search-form" ).on( "submit", function(event) {
 		event.preventDefault();
 		createPokemonByName($(this).children()[0].value.toLowerCase());
+		$(this).children()[0].value = ""
 	});
 });
 
