@@ -19,20 +19,37 @@ var pokemonList = {};
 // 	return acc;
 // });
 
-const getPokemonByName = ((name) => {
+class Pokemon {
+	constructor(data) {
+		this.name = data.name;
+		this.spriteUrls = data.sprites;
+	}
+
+	convertAndDrawSprites(target) {
+		Object.keys(this.spriteUrls).map((key) => {
+		   this.spriteUrls[key] = `<img src="${this.spriteUrls[key]}" />`;
+		});
+		for (let key in this.spriteUrls) {
+			$(target).append(this.spriteUrls[key]);
+		}
+	}
+}
+
+const createPokemonByName = ((name) => {
 	$.getJSON(`http://pokeapi.co/api/v2/pokemon/${name}/`, (data) => {
 	}).then((data) => {
-		let img = document.createElement('img')
-		img.src = data.sprites.front_default
-		$("#results").append(data.name);
-		$("#results").append(img);
+		let pokemon = new Pokemon(data)
+		$("#results").append(pokemon.name);
+		pokemon.convertAndDrawSprites("#results");
+	}).catch((err) => {
+		return console.log(err);
 	});
 });
 
 $(document).ready(function () {
 	$( "#search-form" ).on( "submit", function(event) {
 		event.preventDefault();
-		let pokemon = getPokemonByName($(this).children()[0].value.toLowerCase());
+		let pokemon = createPokemonByName($(this).children()[0].value.toLowerCase());
 	});
 });
 
