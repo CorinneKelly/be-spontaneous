@@ -1,6 +1,6 @@
 $(() => {
 	Flight.find("LAX").then((data) => {
-		
+		console.log(data)
 	});
 });
 
