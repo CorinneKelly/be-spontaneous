@@ -25,7 +25,7 @@ function loadScript() {
 }
 
 function initMap() {
-  var mapCenter = {lat: 32.3078, lng: -64.7505}
+  var mapCenter = {lat: 40.4168, lng: -3.7038}
   // set to bermuda because its in the middle of the ocean..
   var map = new google.maps.Map(document.getElementById('map'), {
     zoom: 3,
@@ -33,6 +33,7 @@ function initMap() {
     center: mapCenter
   })
   var marker = new google.maps.Marker({
+    draggable: true,
     position: mapCenter,
     map: map
   })
