@@ -1,10 +1,10 @@
 $(() => {
 	Flight.find("LAX").then((data) => {
 		console.log(data)
-	});
+	})
 
-	
-});
+	Google.initMap()
+})
 
 
 
