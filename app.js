@@ -3,8 +3,7 @@ $(() => {
 		console.log(data)
 	})
 
-	loadScript()
-	initMap()
+	Google.init();
 })
 
 
