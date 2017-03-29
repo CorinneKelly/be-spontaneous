@@ -37,4 +37,9 @@ function initMap() {
     position: mapCenter,
     map: map
   })
+
+  google.maps.event.addListener(marker, 'dragend', function (event) {
+      var latitude = this.getPosition().lat();
+      var longitude = this.getPosition().lng();
+  });
 }

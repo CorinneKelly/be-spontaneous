@@ -8,6 +8,6 @@
 }
 
 #latlong {
-	z-index: 1;
-	positionL: relative;
+	z-index: 0;
+	position: relative;
 }
