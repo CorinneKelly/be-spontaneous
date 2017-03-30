@@ -1,6 +1,6 @@
 class GoogleActionsController {
 	constructor(marker) {
-		this.registerEventListeners(marker);
+		this.registerEventListeners(marker)
 	}
 
 	registerEventListeners(marker) {	
@@ -8,7 +8,7 @@ class GoogleActionsController {
 			let latitude = this.getPosition().lat()
 			let longitude = this.getPosition().lng()
 			if (GoogleActionsController.getDistanceFromLatLonInKm(latitude, longitude, -51.7963, -59.5236) < 150) {
-				console.log("hey")
+				window.location.href = 'http://localhost:8000/pokemon.html'
 			} else {
 				Flight.find(FlightApi.formatDestination(latitude, longitude)).then((data) => {
 					let flightActionsController = new FlightActionsController(data)
