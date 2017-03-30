@@ -1,5 +1,5 @@
 html {
-	font-family: 'Ubuntu', sans-serif;
+    font-family: 'Ubuntu', sans-serif;
 }
 
 #map {
@@ -12,13 +12,21 @@ html {
 }
 
 #flights-wrapper {
-	height: 500px;
-	width: 100%;
-	/*position: relative;*/
-	z-index: 1;
+    height: 500px;
+    width: 100%;
+    background-color: #FFE66D;
+    z-index: 1;
+    text-align: center;
 }
 
-#title {
-	marigin: 0px;
-	padding: 0px;
+#flights {
+    text-align: left;
+    position: inline;
+}
+
+.flight-quote {
+    position: block;
+    margin: 10px;
+    background-color: #1C3144;
+    color: #F7FFF7;
 }

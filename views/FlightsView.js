@@ -1,6 +1,6 @@
 class FlightsView {
 	static renderFlights(flightData) {
-		if (flightData.getQuotes().length > 0) {
+		if (flightData.getQuotes()) {
 			let flightsList = flightData.getQuotes().map((quote) => {
 				return this.flightTemplate(flightData.getQuoteData(quote.QuoteId))
 			})
