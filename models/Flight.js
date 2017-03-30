@@ -94,7 +94,7 @@ class Flight {
 		return stringDate
 	}
 
-	static find(destination) {
-		return FlightApi.getJSON(destination)
+	static find(destination, origin) {
+		return FlightApi.getJSON(destination, origin)
 	}
 }

@@ -8,9 +8,10 @@ class Google {
     '&key=' + googleApiKey +'&callback=initMap'
     document.body.appendChild(script)
   }
+
   static loadMap(){
     let mapCenter = {lat: 40.4168, lng: -3.7038}
-    let newYork = {lat: 40.7128, lng: -74.0059}
+    let newYork = {lat: originLat, lng: originLong}
     let map = new google.maps.Map(document.getElementById('map'), {
       zoom: 3,
       center: mapCenter,

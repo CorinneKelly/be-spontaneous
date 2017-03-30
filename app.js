@@ -1,5 +1,11 @@
+var originLat
+var originLong
 $(() => {
-	Google.init();
+	navigator.geolocation.getCurrentPosition(function(position) {
+		originLat = position.coords.latitude
+		originLong = position.coords.longitude
+		Google.init()
+	})
 })
 
 

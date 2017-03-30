@@ -10,7 +10,7 @@ class GoogleActionsController {
 			if (GoogleActionsController.getDistanceFromLatLonInKm(latitude, longitude, -51.7963, -59.5236) < 150) {
 				window.location.href = 'http://localhost:8000/pokemon.html'
 			} else {
-				Flight.find(FlightApi.formatDestination(latitude, longitude)).then((data) => {
+				Flight.find(FlightApi.formatDestination(latitude, longitude), FlightApi.formatDestination(originLat, originLong)).then((data) => {
 					let flightActionsController = new FlightActionsController(data)
 				})
 			}
