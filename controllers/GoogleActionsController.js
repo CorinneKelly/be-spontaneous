@@ -8,12 +8,10 @@ class GoogleActionsController {
 			var latitude = this.getPosition().lat()
 			var longitude = this.getPosition().lng()
 			Flight.find(FlightApi.formatDestination(latitude, longitude)).then((data) => {
-				console.log(data)
+				let flightActionsController = new FlightActionsController(data)
 			})
-			window.location.href = "#flights-wrapper"
 		})
 	}
-
 
 	render() {
 		return
