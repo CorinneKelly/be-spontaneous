@@ -25,7 +25,12 @@ html {
     margin: 5px 0px;
     color: #F7FFF7;
     background-color: #05A8AA;
+    vertical-align: center;
 }
+
+	.flight-quote img {
+		horizontal-align: center;
+	}
 
 	.flight-quote a{
 		text-decoration: none;
@@ -41,4 +46,8 @@ html {
 	margin: 10px;
 	background-color: #F7FFF7;
 	color: #FB3640;
+}
+
+#loading_page {
+	text-align: center;
 }
