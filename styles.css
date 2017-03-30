@@ -5,7 +5,6 @@ html {
 #map {
   height: 500px;
   width: 100%;
-  /*position: absolute;*/
   top: 0;
   left: 0;
   z-index: 0;
@@ -24,12 +23,7 @@ html {
 .flight-quote {
 		padding: 10px;
     margin: 5px 0px;
-    /*background-image: url('plane.jpeg');*/
-  	/*background-size:contain;*/
     color: #F7FFF7;
-    /*background-color: #2A4494;*/
-    /*background-color: #605F5E;*/
-    /*background-color: #1F487E;*/
     background-color: #05A8AA;
 }
 
@@ -37,7 +31,6 @@ html {
 		text-decoration: none;
 		padding: 5px;
 		margin: 10px;
-		/*background-color: #FF6B6B;*/
 		background-color: #FB3640;
 		color: #F7FFF7;
 	}
@@ -48,5 +41,4 @@ html {
 	margin: 10px;
 	background-color: #F7FFF7;
 	color: #FB3640;
-	/*color: #FF6B6B;*/
 }
