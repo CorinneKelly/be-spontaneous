@@ -32,18 +32,17 @@ class Flight {
 				return this.getNameFromId(this.carriers, "CarrierId", c)
 			})
 			return {
-				id: quote.QuoteId, price: `$$$$$${quote.MinPrice}`,
+				id: quote.QuoteId, 
+				price: `$$$$$${quote.MinPrice}`,
 				direct: quote.Direct, 
 				outbound: {
 					departureDate: this.formatDate(quote.OutboundLeg.DepartureDate),
-					departureTime: this.formatTime(quote.OutboundLeg.DepartureDate),
 					destination: this.getNameFromId(this.places, "PlaceId", quote.OutboundLeg.DestinationId),
 					origin: this.getNameFromId(this.places, "PlaceId", quote.OutboundLeg.OriginId),
 					carriers: outBoundPlanes
 				},
 				inbound: {
 					departureDate: this.formatDate(quote.InboundLeg.DepartureDate),
-					departureTime: this.formatTime(quote.InboundLeg.DepartureDate),
 					destination: this.getNameFromId(this.places, "PlaceId", quote.InboundLeg.DestinationId),
 					origin: this.getNameFromId(this.places, "PlaceId", quote.InboundLeg.OriginId),
 					carriers: inBoundPlanes
