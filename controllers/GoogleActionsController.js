@@ -7,7 +7,7 @@ class GoogleActionsController {
 		google.maps.event.addListener(marker, 'dragend', function (event) {
 			let latitude = this.getPosition().lat()
 			let longitude = this.getPosition().lng()
-			if (GoogleActionsController.getDistanceFromLatLonInKm(latitude, longitude, -51.7963, -59.5236) < 100) {
+			if (GoogleActionsController.getDistanceFromLatLonInKm(latitude, longitude, -51.7963, -59.5236) < 150) {
 				console.log("hey")
 			} else {
 				Flight.find(FlightApi.formatDestination(latitude, longitude)).then((data) => {
@@ -33,9 +33,5 @@ class GoogleActionsController {
 
 	static deg2rad(deg) {
 		return deg * (Math.PI/180)
-	}
-
-	render() {
-		return
 	}
 }

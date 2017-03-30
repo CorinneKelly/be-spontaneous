@@ -1,6 +1,7 @@
 class FlightsView {
 	static renderFlights(flightData) {
 		if (flightData.getQuotes()) {
+			window.location.href = "#flights-wrapper"
 			let flightsList = flightData.getQuotes().map((quote) => {
 				return this.flightTemplate(flightData.getQuoteData(quote.QuoteId))
 			})
