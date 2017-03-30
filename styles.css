@@ -1,18 +1,21 @@
+html {
+	font-family: 'Ubuntu', sans-serif;
+}
+
 #map {
   height: 500px;
   width: 100%;
-  /*position: relative;*/
+  /*position: absolute;*/
   top: 0;
   left: 0;
   z-index: 0;
 }
 
-#flights {
-	height:500px;
+.flights-wrapper {
+	height: 500px;
+	width: 100%;
 	position: relative;
-	/*margin-top: 515px;*/
+	background-color: #FFE66D;
+	color: #70161E;
 }
 
-#page-wrapper {
-	position: block;
-}
