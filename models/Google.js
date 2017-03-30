@@ -10,13 +10,20 @@ class Google {
   }
   static loadMap(){
     let mapCenter = {lat: 40.4168, lng: -3.7038}
+    let newYork = {lat: 40.7128, lng: -74.0059}
     let map = new google.maps.Map(document.getElementById('map'), {
       zoom: 3,
-      center: mapCenter
+      center: mapCenter,
+      // navigationControl: false,
+      // mapTypeControl: false,
+      // scaleControl: false,
+      // scrollWheel: false,
+      // draggable: true
+      // attempted to disable mac scroll - unsuccessful
     })
     let marker = new google.maps.Marker({
       draggable: true,
-      position: mapCenter,
+      position: newYork,
       map: map
     })
     let googleActionsController = new GoogleActionsController(marker)
