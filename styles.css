@@ -11,11 +11,15 @@ html {
   z-index: 0;
 }
 
-.flights-wrapper {
+#flights-wrapper {
 	height: 500px;
 	width: 100%;
-	position: relative;
+	/*position: relative;*/
 	background-color: #FFE66D;
 	color: #70161E;
 }
 
+#title {
+	marigin: 0px;
+	padding: 0px;
+}

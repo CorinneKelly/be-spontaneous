@@ -10,7 +10,7 @@ class GoogleActionsController {
 			Flight.find(FlightApi.formatDestination(latitude, longitude)).then((data) => {
 				console.log(data)
 			})
-			window.location.href = "#flights"
+			window.location.href = "#flights-wrapper"
 		})
 	}
 
