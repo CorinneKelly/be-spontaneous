@@ -12,21 +12,41 @@ html {
 }
 
 #flights-wrapper {
-    height: 500px;
     width: 100%;
-    background-color: #FFE66D;
     z-index: 1;
     text-align: center;
 }
 
 #flights {
     text-align: left;
-    position: inline;
 }
 
 .flight-quote {
-    position: block;
-    margin: 10px;
-    background-color: #1C3144;
+		padding: 10px;
+    margin: 5px 0px;
+    /*background-image: url('plane.jpeg');*/
+  	/*background-size:contain;*/
     color: #F7FFF7;
+    /*background-color: #2A4494;*/
+    /*background-color: #605F5E;*/
+    /*background-color: #1F487E;*/
+    background-color: #05A8AA;
+}
+
+	.flight-quote a{
+		text-decoration: none;
+		padding: 5px;
+		margin: 10px;
+		/*background-color: #FF6B6B;*/
+		background-color: #FB3640;
+		color: #F7FFF7;
+	}
+
+	.flight-quote a:hover{
+	text-decoration: none;
+	padding: 5px;
+	margin: 10px;
+	background-color: #F7FFF7;
+	color: #FB3640;
+	/*color: #FF6B6B;*/
 }

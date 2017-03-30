@@ -27,6 +27,14 @@ class Flight {
 		return this.quotes
 	}
 
+	getDirectInfo(directInfo) {
+		if (directInfo) {
+			return "Direct Flight"
+		} else {
+			return "Non-Direct Flight"
+		}
+	}
+
 	getQuoteData(id) {
 		let quote;
 		this.getQuotes().forEach((q) => {
@@ -43,9 +51,8 @@ class Flight {
 			return {
 				id: quote.QuoteId, 
 				price: `$${quote.MinPrice}`,
-				direct: quote.Direct, 
+				direct: this.getDirectInfo(quote.Direct), 
 				outbound: {
-
 					departureDate: this.formatDate(quote.OutboundLeg.DepartureDate),
 					destination: this.getNameFromId(this.places, "PlaceId", quote.OutboundLeg.DestinationId),
 					origin: this.getNameFromId(this.places, "PlaceId", quote.OutboundLeg.OriginId),
