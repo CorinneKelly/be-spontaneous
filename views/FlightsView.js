@@ -12,6 +12,7 @@ class FlightsView {
 
 	static flightTemplate(quote) {
 		return `
+		<div class="flight-quote"
 			<p>
 			ID: ${quote.id}
 			Price: ${quote.price}
@@ -30,6 +31,8 @@ class FlightsView {
 				Origin: ${quote.inbound.origin}
 				Carriers: ${quote.inbound.carriers}
 			</p>
+			<a href="http://partners.api.skyscanner.net/apiservices/referral/v1.0/US/USD/en-US/NYC/${quote.outbound.destination}/${quote.outbound.departureDate}/${quote.inbound.departureDate}?apiKey=${skyScannerApiKey}">LETS GO</a>
+		</div>
 		`
 	}
 }
