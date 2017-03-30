@@ -20,5 +20,6 @@ class Google {
       map: map
     })
     let googleActionsController = new GoogleActionsController(marker)
+    // map.setMapTypeId(google.maps.MapTypeId.SATELLITE)
   }
 }
