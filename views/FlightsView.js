@@ -31,7 +31,7 @@ class FlightsView {
 				Origin: ${quote.inbound.origin}
 				Carriers: ${quote.inbound.carriers}
 			</p>
-			<a href="http://partners.api.skyscanner.net/apiservices/referral/v1.0/US/USD/en-US/NYC/${quote.outbound.destination}/${quote.outbound.departureDate}/${quote.inbound.departureDate}?apiKey=${skyScannerApiKey}">LETS GO</a>
+			<a href="http://partners.api.skyscanner.net/apiservices/referral/v1.0/US/USD/en-US/NYC/${quote.referral.destination}/${quote.referral.deptDate}/${quote.referral.returnDate}?apiKey=${skyScannerApiKey}", target="_blank">LETS GO</a>
 		</div>
 		`
 	}

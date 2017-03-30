@@ -14,6 +14,15 @@ class Flight {
 		return name
 	}
 
+	getAiportCodeFromId(id) {
+		let airportCode = ""
+		this.places.forEach((place) => {
+			if (place.PlaceId == id)
+				airportCode = place.SkyscannerCode
+		})
+		return airportCode
+	}
+
 	getQuotes() {
 		return this.quotes
 	}
@@ -33,9 +42,10 @@ class Flight {
 			})
 			return {
 				id: quote.QuoteId, 
-				price: `$$$$$${quote.MinPrice}`,
+				price: `$${quote.MinPrice}`,
 				direct: quote.Direct, 
 				outbound: {
+
 					departureDate: this.formatDate(quote.OutboundLeg.DepartureDate),
 					destination: this.getNameFromId(this.places, "PlaceId", quote.OutboundLeg.DestinationId),
 					origin: this.getNameFromId(this.places, "PlaceId", quote.OutboundLeg.OriginId),
@@ -46,7 +56,13 @@ class Flight {
 					destination: this.getNameFromId(this.places, "PlaceId", quote.InboundLeg.DestinationId),
 					origin: this.getNameFromId(this.places, "PlaceId", quote.InboundLeg.OriginId),
 					carriers: inBoundPlanes
+				},
+				referral: {
+					deptDate: quote.OutboundLeg.DepartureDate.slice(0,10),
+					returnDate: quote.InboundLeg.DepartureDate.slice(0,10),
+					destination: this.getAiportCodeFromId(quote.OutboundLeg.DestinationId)
 				} 
+
 			}
 
 		} else {
