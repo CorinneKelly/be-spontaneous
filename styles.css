@@ -20,12 +20,19 @@ html {
     text-align: left;
 }
 
+.first-line {
+	position: inline;
+	vertical-align: center;
+
+}
+
 .flight-quote {
 		padding: 10px;
     margin: 5px 0px;
     color: #F7FFF7;
     background-color: #05A8AA;
     vertical-align: center;
+    position: block;
 }
 
 	.flight-quote img {
@@ -48,6 +55,6 @@ html {
 	color: #FB3640;
 }
 
-#loading_page {
+#loading {
 	text-align: center;
 }
