@@ -7,7 +7,7 @@ class Flight {
 	}
 
 	sortByLowestPrice() {
-		this.quotes = this.quotes.sort((a, b) => { return a.MinPrice - b.MinPrice})
+		this.quotes = this.quotes != undefined ? this.quotes.sort((a, b) => { return a.MinPrice - b.MinPrice}) : this.quotes
 	}
 
 	getNameFromId(category, catName, id) {

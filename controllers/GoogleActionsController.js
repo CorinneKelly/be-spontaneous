@@ -1,9 +1,26 @@
 class GoogleActionsController {
-	constructor(marker) {
+	constructor(marker, map) {
+		this.map = map
+		this.marker = marker
 		this.registerEventListeners(marker)
 	}
 
-	registerEventListeners(marker) {	
+	registerEventListeners(marker) {
+		// clicking the map
+		google.maps.event.addListener(this.map, 'click', (event) => {
+ 		    	let latitude = event.latLng.lat()
+				let longitude = event.latLng.lng()
+				this.marker.setPosition(event.latLng)
+				if (GoogleActionsController.getDistanceFromLatLonInKm(latitude, longitude, -51.7963, -59.5236) < 150) {
+					window.location.href = 'http://localhost:8000/pokemon.html'
+				} else {
+					Flight.find(FlightApi.formatDestination(latitude, longitude), FlightApi.formatDestination(originLat, originLong)).then((data) => {
+						let flightActionsController = new FlightActionsController(data)
+					})
+				}
+		})
+
+		// dragging the marker
 		google.maps.event.addListener(marker, 'dragend', function (event) {
 			let latitude = this.getPosition().lat()
 			let longitude = this.getPosition().lng()

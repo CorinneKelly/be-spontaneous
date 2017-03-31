@@ -15,13 +15,14 @@ class Google {
     let map = new google.maps.Map(document.getElementById('map'), {
       zoom: 3,
       center: mapCenter,
+      keyboardShortcuts: false
     })
     let marker = new google.maps.Marker({
       draggable: true,
       position: newYork,
       map: map
     })
-    let googleActionsController = new GoogleActionsController(marker)
     map.setMapTypeId(google.maps.MapTypeId.HYBRID)
+    let googleActionsController = new GoogleActionsController(marker, map)
   }
 }
