@@ -9,7 +9,7 @@ class FlightsView {
 			$("#instructions").remove()
 			$("#flights").html(flightsList)
 		} else {
-			$("#flights").html("No flights bro, try moving the marker closer to an airport.").addClass("bro")
+			$("#flights").html("No flights bro, try moving the marker closer to an airport.")
 		}
 	}
 

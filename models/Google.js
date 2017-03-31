@@ -15,12 +15,6 @@ class Google {
     let map = new google.maps.Map(document.getElementById('map'), {
       zoom: 3,
       center: mapCenter,
-      // navigationControl: false,
-      // mapTypeControl: false,
-      // scaleControl: false,
-      // scrollWheel: false,
-      // draggable: true
-      // attempted to disable mac scroll - unsuccessful
     })
     let marker = new google.maps.Marker({
       draggable: true,
