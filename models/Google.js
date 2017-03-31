@@ -23,6 +23,7 @@ class Google {
       map: map
     })
     map.setMapTypeId(google.maps.MapTypeId.HYBRID)
+    // can change to satellite or terrain or delete line for regular traffic view
     let googleActionsController = new GoogleActionsController(marker, map)
   }
 }
