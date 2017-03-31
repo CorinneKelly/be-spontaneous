@@ -1,5 +1,5 @@
 html {
-    font-family: 'Ubuntu', sans-serif;
+  font-family: 'Ubuntu', sans-serif;
 }
 
 #map {
@@ -11,35 +11,36 @@ html {
 }
 
 #flights-wrapper {
-    width: 100%;
-    z-index: 1;
+  width: 100%;
+  z-index: 1;
 }
 
 #flights {
-    text-align: left;
+  text-align: center;
 }
 
 .flight-quote {
-		padding: 10px;
-    margin: 5px 0px;
-    color: #F7FFF7;
-    background-color: #05A8AA;
-		display: flex;
+  padding: 10px;
+  margin: 5px 0px;
+  color: #F7FFF7;
+  background-color: #05A8AA;
+  display: flex;
+  text-align: left;
 }
 
-	.flight-quote img {
-		horizontal-align: center;
-	}
+.flight-quote img {
+  horizontal-align: center;
+}
 
-	.flight-quote a{
-		text-decoration: none;
-		padding: 5px;
-		margin: 10px 30px;
-		background-color: #FB3640;
-		color: #F7FFF7;
-	}
+.flight-quote a{
+  text-decoration: none;
+  padding: 5px;
+  margin: 10px 30px;
+  background-color: #FB3640;
+  color: #F7FFF7;
+}
 
-	.flight-quote a:hover{
+.flight-quote a:hover{
 	text-decoration: none;
 	padding: 5px;
 	margin: 10px 30px;

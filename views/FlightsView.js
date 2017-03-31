@@ -5,7 +5,6 @@ class FlightsView {
 			let flightsList = flightData.getQuotes().map((quote) => {
 				return this.flightTemplate(flightData.getQuoteData(quote.QuoteId))
 			})
-
 			$("#instructions").remove()
 			$("#flights").html(flightsList)
 		} else {
@@ -14,6 +13,7 @@ class FlightsView {
 	}
 
 	static flightTemplate(quote) {
+		debugger;
 		let inbound = quote.inbound.carriers.length > 0 ? quote.inbound.carriers : 'Unknown Inbound Carrier' 
 		let outbound = quote.outbound.carriers.length > 0 ? quote.outbound.carriers + ' &' : 'Unknown Outbound Carrier &'
 		return `
@@ -27,7 +27,7 @@ class FlightsView {
 				<p>${quote.inbound.destination} <img src="dual_planes.svg" height="30" width="auto"> ${quote.outbound.destination}</p>
 				<p>${quote.direct}</p>
 				<p>${quote.outbound.departureDate} to ${quote.inbound.departureDate} </p>
-				<p>Carriers: ${quote.inbound.carriers} & ${quote.outbound.carriers} </p>
+				<p>Carriers: ${outbound} ${inbound} </p>
 			</div>
 		</div>
 		`
