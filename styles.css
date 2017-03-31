@@ -13,17 +13,10 @@ html {
 #flights-wrapper {
     width: 100%;
     z-index: 1;
-    text-align: center;
 }
 
 #flights {
     text-align: left;
-}
-
-.first-line {
-	position: inline;
-	vertical-align: center;
-
 }
 
 .flight-quote {
@@ -31,8 +24,7 @@ html {
     margin: 5px 0px;
     color: #F7FFF7;
     background-color: #05A8AA;
-    vertical-align: center;
-    position: block;
+		display: flex;
 }
 
 	.flight-quote img {
@@ -42,7 +34,7 @@ html {
 	.flight-quote a{
 		text-decoration: none;
 		padding: 5px;
-		margin: 10px;
+		margin: 10px 30px;
 		background-color: #FB3640;
 		color: #F7FFF7;
 	}
@@ -50,16 +42,36 @@ html {
 	.flight-quote a:hover{
 	text-decoration: none;
 	padding: 5px;
-	margin: 10px;
+	margin: 10px 30px;
 	background-color: #F7FFF7;
 	color: #FB3640;
 }
+
+.flight-left {
+  width: 30%;
+}
+
+.flight-left h3{
+  margin-top: 45px;
+  margin-left: 40px;
+}
+
+.flight-right {
+	flex: 1;
+	margin-top: -10px;
+}
+
 
 #loading {
 	text-align: center;
 }
 
 #instructions {
+	text-align: center;
+	margin-top: 25px;
+}
+
+.bro {
 	text-align: center;
 	margin-top: 25px;
 }
