@@ -5,7 +5,7 @@ class Google {
     let script = document.createElement('script')
     script.type = 'text/javascript'
     script.src = 'https://maps.googleapis.com/maps/api/js?v=3' +
-    '&key=' + googleApiKey +'&callback=initMap'
+    '&key=' + 'AIzaSyBrn2cdDNjKP7XYgtvEiaIYiB_6fDZ7-XM' +'&callback=initMap'
     document.body.appendChild(script)
   }
 
