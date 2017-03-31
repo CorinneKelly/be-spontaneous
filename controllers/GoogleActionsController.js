@@ -12,7 +12,7 @@ class GoogleActionsController {
 				let longitude = event.latLng.lng()
 				this.marker.setPosition(event.latLng)
 				if (GoogleActionsController.getDistanceFromLatLonInKm(latitude, longitude, -51.7963, -59.5236) < 150) {
-					window.location.href = 'http://localhost:8000/pokemon.html'
+					window.location.href = 'pokemon.html'
 				} else {
 					Flight.find(FlightApi.formatDestination(latitude, longitude), FlightApi.formatDestination(originLat, originLong)).then((data) => {
 						let flightActionsController = new FlightActionsController(data)
@@ -25,7 +25,7 @@ class GoogleActionsController {
 			let latitude = this.getPosition().lat()
 			let longitude = this.getPosition().lng()
 			if (GoogleActionsController.getDistanceFromLatLonInKm(latitude, longitude, -51.7963, -59.5236) < 150) {
-				window.location.href = 'http://localhost:8000/pokemon.html'
+				window.location.href = 'pokemon.html'
 			} else {
 				Flight.find(FlightApi.formatDestination(latitude, longitude), FlightApi.formatDestination(originLat, originLong)).then((data) => {
 					let flightActionsController = new FlightActionsController(data)
