@@ -3,6 +3,11 @@ class Flight {
 		this.carriers = data.Carriers
 		this.places = data.Places
 		this.quotes = data.Quotes
+		this.sortByLowestPrice()
+	}
+
+	sortByLowestPrice() {
+		this.quotes = this.quotes.sort((a, b) => { return a.MinPrice - b.MinPrice})
 	}
 
 	getNameFromId(category, catName, id) {

@@ -31,7 +31,7 @@ class Move {
 	}
 
 	getURL() {
-		return this.url
+		return this.url;
 	}
 
 	getMoreInfo() {

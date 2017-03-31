@@ -13,7 +13,6 @@ class FlightsView {
 	}
 
 	static flightTemplate(quote) {
-		debugger;
 		let inbound = quote.inbound.carriers.length > 0 ? quote.inbound.carriers : 'Unknown Inbound Carrier' 
 		let outbound = quote.outbound.carriers.length > 0 ? quote.outbound.carriers + ' &' : 'Unknown Outbound Carrier &'
 		return `
