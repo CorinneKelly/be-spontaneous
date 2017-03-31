@@ -5,9 +5,11 @@ class FlightsView {
 			let flightsList = flightData.getQuotes().map((quote) => {
 				return this.flightTemplate(flightData.getQuoteData(quote.QuoteId))
 			})
+
+			$("#instructions").remove()
 			$("#flights").html(flightsList)
 		} else {
-			$("#flights").html("no flights bro")
+			$("#flights").html("no flights bro, try moving the marker closer to an airport")
 		}
 	}
 
