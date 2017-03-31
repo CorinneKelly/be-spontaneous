@@ -15,7 +15,7 @@ class FlightsView {
 		return `
 		<div class="flight-quote"
 			<h3>${quote.price}</h3>
-			<p>${quote.inbound.destination} <img src="dual_planes.svg" height="30" width="30"> ${quote.outbound.destination}</p>
+			<p>${quote.inbound.destination} <img src="dual_planes.svg" height="30" width="auto"> ${quote.outbound.destination}</p>
 			<p>${quote.direct}</p>
 			<p>${quote.outbound.departureDate} to ${quote.inbound.departureDate} </p>
 			<p>Carriers: ${quote.inbound.carriers} & ${quote.outbound.carriers} </p>
