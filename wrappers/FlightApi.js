@@ -1,6 +1,6 @@
 class FlightApi {
   static getJSON(destination, origin) {
-    return $.getJSON(`http://localhost:3000/flights/${destination}/${origin}`)
+    return $.getJSON(`https://pacific-inlet-61461.herokuapp.com/flights/${destination}/${origin}`)
   }
 
   static formatDestination(lat, longitude) {
