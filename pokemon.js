@@ -84,11 +84,10 @@ class Pokemon {
 		button.type = "submit";
 		button.id = `delete-button-${this.id}`;
 		button.value = "Delete";
-		let self = this;
-		button.onclick = function(event) {
+		button.onclick = (event) => {
 			event.preventDefault();
-			deleteFromRace(self);
-			$('#'+this.id).parent().remove();
+			deleteFromRace(this);
+			$('#'+this.id).remove();
 		}
 		$('#'+this.id).append(button)
 		$('#'+this.id).append(`<p>Wins: ${this.wins}`)
