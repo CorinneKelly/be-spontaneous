@@ -19,7 +19,7 @@ class FlightsView {
 		<div class="flight-quote">
 			<div class="flight-left">
 				<h3>${quote.price}</h3>
-				<a href="http://partners.api.skyscanner.net/apiservices/referral/v1.0/US/USD/en-US/NYC/${quote.referral.destination}/${quote.referral.deptDate}/${quote.referral.returnDate}?apiKey=${skyScannerApiKey}", target="_blank">LETS GO</a>
+				<a href="http://partners.api.skyscanner.net/apiservices/referral/v1.0/US/USD/en-US/NYC/${quote.referral.destination}/${quote.referral.deptDate}/${quote.referral.returnDate}?apiKey=${ENV[skyScannerApiKey]}", target="_blank">LETS GO</a>
 			</div>
 
 			<div class="flight-right">

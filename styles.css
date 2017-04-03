@@ -53,17 +53,17 @@ html {
 }
 
 .flight-left {
-  width: 30%;
+  flex: 30%;
 }
 
 .flight-left h3{
-  margin-top: 45px;
-  margin-left: 40px;
+  text-align: center;
+
 }
 
 .flight-right {
-	flex: 1;
-	margin-top: -10px;
+	flex: auto;
+	text-align: center;
 }
 
 
