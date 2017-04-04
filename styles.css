@@ -32,16 +32,13 @@ html {
   background-color: #E7E247;
 }
 
-.flight-quote img {
-  horizontal-align: center;
-}
-
 .flight-quote a{
   text-decoration: none;
   padding: 5px;
   margin: 10px 30px;
   background-color: #FB3640;
   color: #F7FFF7;
+  text-align: left;
 }
 
 .flight-quote a:hover{
@@ -49,21 +46,18 @@ html {
 	padding: 5px;
 	margin: 10px 30px;
 	background-color: #F7FFF7;
-	color: #FB3640;
+	color: #323031;
+  text-align: left;
 }
 
 .flight-left {
   flex: 30%;
-}
-
-.flight-left h3{
   text-align: center;
-
 }
 
 .flight-right {
 	flex: auto;
-	text-align: center;
+	text-align: left;
 }
 
 
